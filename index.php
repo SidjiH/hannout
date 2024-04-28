@@ -79,22 +79,42 @@
 
     /* Styles pour les articles */
     .article {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f9f9f9;
       margin: 20px 0;
       padding: 20px;
-      border: 1px solid #333;
+      border: 1px solid #ddd;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .article h2 {
-      margin-top: 0;
+      color: #333;
+      font-size: 24px;
+    }
+
+    .article p {
+      color: #666;
+      font-size: 16px;
+    }
+    .article .info {
+      flex: 1;
     }
 
     .article img {
-      max-width: 100%;
+      max-width: 200px;
       height: auto;
+      margin-left: 20px;
+      border-radius: 5px;
     }
-    
+
+    .article .price {
+      font-weight: bold;
+      color: #333;
+      font-size: 18px;
+    }
+
   </style>
 </head>
 <body>
@@ -137,9 +157,11 @@ $stmt->execute([
 // Affichage des articles
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   echo "<div class='article'>";
+  echo "<div class='info'>";
   echo "<h2>" . htmlspecialchars($row['Nom']) . "</h2>";
   echo "<p>" . htmlspecialchars($row['Déscription']) . "</p>";
   echo "<p>Prix : " . htmlspecialchars($row['Prix']) . "€</p>";
+  echo "</div>";
   echo "<img src='" . htmlspecialchars($row['Photo']) . "' alt='Image de l\'article'>";
   echo "</div>";
 }
