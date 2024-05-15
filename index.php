@@ -5,8 +5,8 @@ session_start();
 <html>
 <head>
   <title>Accueil</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/themes.css">
 </head>
 <body>
 
@@ -84,7 +84,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   echo "</a>";
 }
 ?>
-</div>
-<script src="them-switch.js"></script>
+<script src="js/them-switch.js"></script>
 </body>
 </html>
