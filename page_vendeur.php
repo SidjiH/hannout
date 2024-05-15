@@ -25,6 +25,7 @@ function connectToDatabase() {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="stylesheet" href="page_vendeur.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,18 +60,13 @@ function connectToDatabase() {
       padding: 0;
       background-color: #333;
     }
-    .logo {
-      width: 100px;
-      height: auto;
-    }
-
     .menu li {
       display: inline;
     }
 
     .menu li a {
       display: block;
-      color: #938a8a;
+      color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -89,7 +85,7 @@ function connectToDatabase() {
       display: none;
       position: absolute;
       right: 0;
-      background-color: #f9f9f9;
+      background-color: #000;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
@@ -172,6 +168,9 @@ function connectToDatabase() {
       border-top: none;
       animation: fadeEffect 1s; /* Fading effect takes 1 second */
     }
+    .tabcontent h3 {
+      background-color: white;
+    }
 
     /* Fading animation */
     @keyframes fadeEffect {
@@ -181,7 +180,8 @@ function connectToDatabase() {
 
     /* Style pour les articles */
     .article-card {
-      border: 1px solid #ccc;
+      background-color: #222;
+      border: 1px solid #333;
       border-radius: 5px;
       margin: 10px;
       padding: 10px;
@@ -211,6 +211,9 @@ function connectToDatabase() {
 <body>
 
 <ul class="menu">
+  <a href="index.php">
+    <img class="logo" src="img/Logo.png" alt="Logo Hannout">
+  </a>
   <li><a href="index.php#home">Accueil</a></li>
   <li><a href="validation.php">Panier</a></li>
   <li class="dropdown">
@@ -335,8 +338,6 @@ function connectToDatabase() {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-
-  // Obtenez l'élément avec la classe 'tablinks' et cliquez dessus
   document.getElementsByClassName("tablinks")[0].click();
 </script>
 <script src="them-switch.js"></script>

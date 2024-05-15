@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.switch{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.logo {
+  width: 70px;
+  height: auto;
+  border-radius: 30%;
+
+}
+body.light-theme {
+  background-color: #FFF !important;
+  color: #333 !important;
+}
+
+/* Styles pour le thème sombre */
+body.dark-theme {
+  background-color: #555 !important;
+  color: #f0f0f0 !important;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  .dropdown{
+    margin-left: 85%;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  display: block;
+  color: #FFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+.menu li a:hover {
+  background-color: #111;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  background-color: #333;
+  color : white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 35%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 40px); /* Cela crée une grille de 3 colonnes avec des marges de 20px */
+  box-sizing: border-box;
+}
+
+.article h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+.article p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article .info {
+  flex: 1;
+}
+
+.article img {
+  max-width: 200px;
+  height: 200px;
+  margin-top: -130px;
+  margin-left: 400px;
+  border-radius: 7px;
+
+}
+
+.article .price {
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+/* Ajustements pour les petits écrans */
+@media (max-width: 800px) {
+  .article {
+    width: calc(50% - 40px); /* Cela crée une grille de 2 colonnes avec des marges de 20px */
+  }
+}
+
+@media (max-width: 500px) {
+  .article {
+    width: 100%; /* Cela crée une liste pour les très petits écrans */
+    margin: 10px 0;
+  }
+}

@@ -8,7 +8,7 @@ session_start();
   <link rel="stylesheet" href="validation.css">
 
   <style>
-   
+
   </style>
 </head>
 <body>
@@ -122,7 +122,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     });
   });
 </script>
-</body>
-</html>
+<script src="them-switch.js"></script>
 </body>
 </html>

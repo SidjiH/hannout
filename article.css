@@ -1,0 +1,288 @@
+:root {
+  --primary-bg-color: #f0f0f0;
+  --light-theme-bg-color: #ffffff;
+  --light-theme-text-color: #121010;
+  --dark-theme-bg-color: #000000;
+  --dark-theme-text-color: #d3d3d3;
+  --menu-bg-color: #6c6c6c;
+  --dropdown-bg-color: #9c9999;
+  --navbar-bg-color: #232f3e;
+  --sidebar-border-color: #ddd;
+  --button-bg-color: #333;
+  --button-hover-bg-color: #444;
+  --primary-text-color: #333;
+  --secondary-text-color: #615959;
+  --link-text-color: #ffffff;
+  --hover-bg-color: #111;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--primary-text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Thèmes clair et sombre */
+body.light-theme {
+  background-color: var(--light-theme-bg-color);
+  color: var(--light-theme-text-color);
+}
+
+body.dark-theme {
+  background-color: var(--dark-theme-bg-color);
+  color: var(--dark-theme-text-color);
+}
+.logo {
+  width: 70px;
+  height: auto;
+  border-radius: 30%;
+
+}
+body.light-theme {
+  background-color: #FFF !important;
+  color: #333 !important;
+}
+
+/* Styles pour le thème sombre */
+body.dark-theme {
+  background-color: #555 !important;
+  color: #f0f0f0 !important;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  .dropdown{
+    margin-left: 85%;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  display: block;
+  color: #FFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+.menu li a:hover {
+  background-color: #111;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .navbar {
+      background-color: #232f3e;
+      color: #615959;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .main .article-details {
+      flex: 2;
+      margin-right: 20px;
+    }
+
+    .main .sidebar {
+      flex: 1;
+    }
+
+    .sidebar {
+      border: 3px solid var(--primary-text-color);
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .sidebar-item {
+      margin-bottom: 20px;
+    }
+
+    .sidebar-item h2 {
+      font-size: 24px;
+      border: 1px solid var(--primary-text-color);
+      padding: 10px;
+      text-align: center;
+    }
+
+      #augmenter-stock {
+      position: relative;
+      margin-left:20px;
+      top: 30px;
+      display: inline-block;
+      padding: 10px 45px;
+      background-color: #0c7e32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #augmenter-stock:hover{
+        background-color: #0a3f20;
+      }
+
+    #supprimer-article {
+        position: relative;
+        margin-left: 20px;
+        top: 50px;
+        display: inline-block;
+        padding: 10px 40px;
+        background-color: #cc0000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #supprimer-article:hover {
+        background-color: #990000;
+    }
+      #add-to-cart {
+
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+
+    #add-to-cart:hover {
+      background-color: #444;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .comment-section {
+      margin-top: 20px;
+      width: 30%;
+      padding: 20px;
+    }
+
+    .comment {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .comment h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .comment-date {
+      font-size: 12px;
+      color: #888;
+    }
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg-color);
+  color: var(--link-text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+

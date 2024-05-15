@@ -1,0 +1,112 @@
+.product img {
+    width: 100px;
+    height: auto;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+  }
+  .cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  .cart-item-info {
+    flex: 1;
+  }
+  .cart-item-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .cart-item-price {
+    color: #333;
+    font-size: 16px;
+  }
+  .cart-item-quantity {
+    font-size: 16px;
+  }
+  .validate-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f90;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+  }
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .menu li {
+    display: inline;
+  }
+
+  .menu li a {
+    display: block;
+    color: #938a8a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .menu li a:hover {
+    background-color: #111;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+

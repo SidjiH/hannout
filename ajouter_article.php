@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Vérifiez si le formulaire est soumis
+// Vérifier si le formulaire est soumis
 if(isset($_POST["submit"])) {
   // Obtenez les données du formulaire
 
@@ -13,14 +13,14 @@ if(isset($_POST["submit"])) {
   $reduction = $_POST['reduction'];
   $note = $_POST['note'];
 
-  // Obtenez les informations du fichier
+  // Obtener les informations du fichier
   $fileName = $_FILES['file']['name'];
   $fileTmpName = $_FILES['file']['tmp_name'];
   $fileSize = $_FILES['file']['size'];
   $fileError = $_FILES['file']['error'];
   $fileType = $_FILES['file']['type'];
 
-  // Vérifiez si le fichier est une image
+  // Vérifier si le fichier est une image
   $fileExt = explode('.', $fileName);
   $fileActualExt = strtolower(end($fileExt));
   $allowed = array('jpg', 'jpeg', 'png', 'svg');
@@ -28,13 +28,13 @@ if(isset($_POST["submit"])) {
   if(in_array($fileActualExt, $allowed)) {
     if($fileError === 0) {
       if($fileSize < 500000) { // Taille du fichier inférieure à 500KB
-        // Créez un nom de fichier unique
+        // Créer un nom de fichier unique
         $fileNameNew = $vendor."_".$name.".".$fileActualExt;
         $fileDestination = 'img/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
 
-        // Insérez les données dans la base de données
-        // Connectez-vous à votre base de données
+        // Insértion des données dans la base de données
+        // Connection à la base de données
         $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
         $sql = "INSERT INTO articles (Vendeur_id, Nom, Déscription, Prix, Stock, Vendeur, Date_ajout, Reduction, Note, Photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($sql);
