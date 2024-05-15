@@ -3,9 +3,8 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="article.css">
-<link rel="stylesheet" href="themes.css">
+<link rel="stylesheet" href="css/article.css">
+<link rel="stylesheet" href="css/themes.css">
 <body>
 
 
@@ -48,7 +47,6 @@ session_start();
 
   <div class="article-details">
     <?php
-
     $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 
     $nom = isset($_GET['nom']) ? urldecode($_GET['nom']) : '';
@@ -238,7 +236,8 @@ if (isset($_SESSION['acheteur_nom']) || isset($_SESSION['vendeur_nom']) || isset
 ?>
 </div>
 </div>
-<script src="them-switch.js"></script>
+
+<script src="js/them-switch.js"></script>
 
 </body>
 </html>

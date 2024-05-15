@@ -24,6 +24,8 @@ $commande = $stmt->fetch(PDO::FETCH_ASSOC);
   <title>Vendeur</title>
 
   <link rel="stylesheet" href="css/commande.css">
+  <link rel="stylesheet" href="css/themes.css">
+
 </head>
 <body>
 
@@ -93,6 +95,8 @@ if ($commande) {
   echo "<p>Cette commande n'existe pas.</p>";
 }
 ?>
+<script src="js/them-switch.js"></script>
+
 </body>
 </html>
 

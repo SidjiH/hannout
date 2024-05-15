@@ -45,7 +45,10 @@ registerUser($conn);
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Inscription</title>
 
-   <link rel="stylesheet" href="inscription.css">
+   <link rel="stylesheet" href="css/inscription.css">
+    <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet"href="css/style.css" >
 
 
 </head>

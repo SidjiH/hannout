@@ -39,24 +39,197 @@ $commandes = getCommandesByUtilisateur_id($_SESSION['id']);
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Acheteur</title>
 
-   <link rel="stylesheet" href="page_acheteur.css">
-  <link rel="stylesheet" href="themes.css">
-
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
     /* Styles existants */
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body.light-theme {
+      background-color: #FFF !important;
+      color: #121010 !important;
+    }
 
+    /* Styles pour le thème sombre */
+    body.dark-theme {
+      background-color: #000 !important;
+      color: #d3d3d3 !important;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+    }
+    .menu li {
+      display: inline;
+    }
+
+    .menu li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .menu li a:hover {
+      background-color: #111;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    /* Styles pour la barre de recherche */
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+
+    /* Style des onglets */
+    .tab {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Style des boutons d'onglets */
+    .tab button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 1em;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    /* Change la couleur de fond des boutons d'onglets lorsqu'ils sont survolés */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Style de l'onglet actif */
+    .tab button.active {
+      background-color: #ccc;
+      border-bottom: 2px solid #333;
+    }
+
+    /* Style du contenu de l'onglet */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-top: none;
+      animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    }
+    .tabcontent h3 {
+      background-color: white;
+    }
+
+    /* Fading animation */
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Style pour les articles */
+    .article-card {
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .article-card h3 {
+      margin: 10px 0;
+    }
+
+    .article-card p {
+      color: #d3d3d3;
+    }
   </style>
 </head>
 <body>
 
 <ul class="menu">
+  <a href="index.php">
+    <img class="logo" src="img/Logo.png" alt="Logo Hannout">
+  </a>
   <li><a href="index.php#home">Accueil</a></li>
   <li><a href="validation.php">Panier</a></li>
   <li class="dropdown">
     <a href="#" class="dropbtn">Profil</a>
     <div class="dropdown-content">
       <?php
+
       if (isset($_SESSION['acheteur_nom']) || isset($_SESSION['vendeur_nom'])) {
 
         if($_SESSION['row'] !== null){
@@ -72,7 +245,6 @@ $commandes = getCommandesByUtilisateur_id($_SESSION['id']);
         echo '<a href="connexion.php">Connexion</a>';
         echo '<a href="inscription.php">Inscription</a>';
       }
-
       ?>
     </div>
   </li>
@@ -120,7 +292,7 @@ $commandes = getCommandesByUtilisateur_id($_SESSION['id']);
   document.getElementsByClassName("tablinks")[0].click();
 </script>
 
-<script src="them-switch.js"></script>
+<script src="js/them-switch.js"></script>
 
 </body>
 </html>

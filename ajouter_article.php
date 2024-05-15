@@ -57,6 +57,7 @@ if(isset($_POST["submit"])) {
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Ajouter un article</title>
   <style>
     /* Styles existants */
@@ -138,11 +139,12 @@ if(isset($_POST["submit"])) {
       cursor: pointer;
     }
   </style>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <ul class="menu">
   <li><a href="index.php#home">Accueil</a></li>
-  <li><a href="contact.php">Contact</a></li>
+  <li><a href="validation.php">Panier</a></li>
   <li class="dropdown">
     <a href="#" class="dropbtn">Profil</a>
     <div class="dropdown-content">

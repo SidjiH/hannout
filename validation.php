@@ -5,17 +5,20 @@ session_start();
 <html>
 <head>
   <title>Validation du panier</title>
-  <link rel="stylesheet" href="validation.css">
+  <link rel="stylesheet" href="css/validation.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/index.css">
 
   <style>
 
   </style>
 </head>
 <body>
-<a href="index.php">
-  <img class="logo" src="img/Logo.png" alt="Logo Hannout">
-</a>
+
 <ul class="menu">
+  <a href="index.php">
+    <img class="logo" src="img/Logo.png" alt="Logo Hannout">
+  </a>
   <li><a href="index.php#home">Accueil</a></li>
   <li><a href="validation.php">Panier</a></li>
   <li class="dropdown">
@@ -122,6 +125,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     });
   });
 </script>
-<script src="them-switch.js"></script>
+<script src="js/them-switch.js"></script>
 </body>
 </html>

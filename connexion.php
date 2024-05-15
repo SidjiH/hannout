@@ -6,7 +6,7 @@ function handleLogin($conn) {
   if(!isset($_POST['submit'])) return;
 
   $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $mdp = $_POST['mdp']; 
+  $mdp = $_POST['mdp'];
   $select = "SELECT * FROM utilisateur WHERE email = '$email'";
   $result = mysqli_query($conn, $select);
 
@@ -18,7 +18,7 @@ function handleLogin($conn) {
   $row = mysqli_fetch_array($result);
   $_SESSION['email'] = $row['email'];
   $_SESSION['row'] = $row;
-  if(!password_verify($mdp, $row['mdp'])){ 
+  if(!password_verify($mdp, $row['mdp'])){
     $GLOBALS['error'][] = 'Email ou mot de passe Incorrect';
     return;
   }
@@ -48,12 +48,15 @@ handleLogin($conn);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
 
-  <link rel="stylesheet" href="connexion.css">
+  <link rel="stylesheet" href="css/connexion.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet"href="css/style.css" >
 
 </head>
 <style>
 
- 
+
 </style>
 <body>
 <ul class="menu">
