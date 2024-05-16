@@ -26,14 +26,17 @@ function handleLogin($conn) {
   if($row['type_uti'] === 'vendeur'){
     $_SESSION['id'] = $row['id'];
     $_SESSION['vendeur_nom'] = $row['nom'];
+    $_SESSION['type_uti'] = $row['type_uti'];
     header('location:index.php');
   } else if($row['type_uti'] === 'acheteur') {
     $_SESSION['acheteur_nom'] = $row['nom'];
     $_SESSION['id'] = $row['id'];
+    $_SESSION['type_uti'] = $row['type_uti'];
     header('location:index.php');
   } else if($row['type_uti'] === 'admin') {
     $_SESSION['admin_nom'] = $row['nom'];
     $_SESSION['id'] = $row['id'];
+    $_SESSION['type_uti'] = $row['type_uti'];
     header('location:index.php'); // Rediriger vers la page admin
   }
 }

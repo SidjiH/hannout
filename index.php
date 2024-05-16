@@ -62,7 +62,7 @@ $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 
-$stmt = $db->prepare("SELECT * FROM articles WHERE Nom LIKE :search OR Déscription LIKE :search OR Vendeur LIKE :search ORDER BY Prix DESC LIMIT 100");
+$stmt = $db->prepare("SELECT * FROM articles WHERE (Nom LIKE :search OR Déscription LIKE :search OR Vendeur LIKE :search) AND supprimé = 0 ORDER BY Prix DESC LIMIT 100");
 
 
 $stmt->execute([

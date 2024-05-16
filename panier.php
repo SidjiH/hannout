@@ -49,13 +49,13 @@ if(!$panier) {
 $stmt = $db->prepare("SELECT Quantité FROM panier_article WHERE Panier_ID = :panierId AND Article_ID = :articleId");
 $stmt->execute(['panierId' => $panierId, 'articleId' => $articleId]);
 $panierArticle = $stmt->fetch(PDO::FETCH_ASSOC);
-$oldQuantity = $panierArticle['Quantité'];
+$oldQuantite = $panierArticle['Quantité'];
 
-$newQuantity = $oldQuantity + $quantity;
-$newPrice = $newQuantity * $price;
+$nvQuantite = $oldQuantite + $quantity;
+$nvPrix = $nvQuantite * $price;
 
-$stmt = $db->prepare("UPDATE panier_article SET Quantité = :newQuantity, Prix = :newPrice WHERE Panier_ID = :panierId AND Article_ID = :articleId");
-$stmt->execute(['newQuantity' => $newQuantity, 'newPrice' => $newPrice, 'panierId' => $panierId, 'articleId' => $articleId]);
+$stmt = $db->prepare("UPDATE panier_article SET Quantité = :nvQuantite, Prix = :nvPrix WHERE Panier_ID = :panierId AND Article_ID = :articleId");
+$stmt->execute(['nvQuantite' => $nvQuantite, 'nvPrix' => $nvPrix, 'panierId' => $panierId, 'articleId' => $articleId]);
 
 if($panierArticle) {
   // Si l'article est déjà dans le panier, augmenter: la quantité

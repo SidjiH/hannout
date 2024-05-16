@@ -9,7 +9,7 @@ if(isset($_SESSION['id']) && $_SESSION['row']['type_uti'] === 'vendeur'){
   $articleId = $_POST['article_id'];
 
   // Préparation de la requête SQL pour augmenter le stock
-  $stmt = $db->prepare("UPDATE articles SET stock = stock + 1 WHERE id = :articleId AND vendeur_id = :vendeurId");
+  $stmt = $db->prepare("UPDATE articles SET Stock = Stock + 1 WHERE id = :articleId AND vendeur_id = :vendeurId");
 
   // Exécution de la requête SQL
   $stmt->execute([

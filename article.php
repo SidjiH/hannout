@@ -3,8 +3,12 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="css/article.css">
-<link rel="stylesheet" href="css/themes.css">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/article.css">
+  <link rel="stylesheet" href="css/themes.css">
+</head>
+
 <body>
 
 
@@ -115,38 +119,35 @@ session_start();
       <input type="hidden" id="Prix" value="<?php echo $article['Prix'];?>">
       <input type="number" id="Quantité" min="0" max="<?php echo $maxQuantity;?>" value="0" > <button id="add-to-cart">Ajouter au panier</button>
       <span id="augmenter-stock" data-article-id="<?php echo $article['id']; ?>">Augmenter le stock</span>
-      <span id="supprimer-article" data-article-id="<?php echo $article['id'];?>">Supprimer cet article.</span>
+      <span id="supprimer-article" data-article-id="<?php echo $article['id'];?>" data-vendeur-id="<?php echo $article['Vendeur_id']; ?>">Supprimer cet article.</span>
     </div>
 
-
-
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const deleteButton = document.getElementById("supprimer-article");
-    deleteButton.addEventListener("click", function() {
-        const articleId = this.dataset.articleId;
-        $.post("supprimer_article.php", { article_id: articleId }, function(data) {
+      document.addEventListener("DOMContentLoaded", function() {
+        const deleteButton = document.getElementById("supprimer-article");
+        deleteButton.addEventListener("click", function() {
+          const articleId = this.dataset.articleId;
+          const vendeur_id = this.dataset.vendeurId;
+          $.post("supprimer_article.php", { article_id: articleId, vendeur_id: vendeur_id }, function(data) {
             alert(data);
+          });
         });
-    });
-});
+      });
 
 
-$(document).ready(function(){
-  $("#augmenter-stock").click(function(){
-    var articleId = $(this).data('article-id');
-    $.ajax({
-      url: 'augmenter_stock.php',
-      type: 'post',
-      data: {article_id: articleId},
-      success: function(response){
-        alert(response);
-      }
-    });
-  });
-});
-</script>
-    <script>
+      $(document).ready(function(){
+        $("#augmenter-stock").click(function(){
+          var articleId = $(this).data('article-id');
+          $.ajax({
+            url: 'augmenter_stock.php',
+            type: 'post',
+            data: {article_id: articleId},
+            success: function(response){
+              alert(response);
+            }
+          });
+        });
+      });
 
       document.getElementById('add-to-cart').addEventListener('click', function() {
         var articleId = document.getElementById('Article_ID').value;
@@ -165,6 +166,19 @@ $(document).ready(function(){
           .catch((error) => {
             console.error('Error:', error);
           });
+      });
+      $(document).ready(function(){
+        $("#augmenter-stock").click(function(){
+          var articleId = $(this).data('article-id');
+          $.ajax({
+            url: 'augmenter_stock.php',
+            type: 'post',
+            data: {article_id: articleId},
+            success: function(response){
+              alert(response);
+            }
+          });
+        });
       });
     </script>
   </div>
@@ -238,6 +252,7 @@ if (isset($_SESSION['acheteur_nom']) || isset($_SESSION['vendeur_nom']) || isset
 </div>
 
 <script src="js/them-switch.js"></script>
+
 
 </body>
 </html>
